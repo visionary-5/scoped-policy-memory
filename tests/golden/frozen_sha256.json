@@ -1,0 +1,123 @@
+{
+ "_provenance": {
+  "ccgen": "SHA-256 frozen by the original experiments on the GPU server (original frozen protocols: capcpt_base_v1.json inputs = ccgen-v1 manifest and probe test files; gate_v1.json V1 = cons; closeout_ext_v1.json inputs = closeout confirmation views and repair/consistent training data; sysprobe_v1.json = closeout dev views; fewshot_v1.json = few-shot views). Paths are relative to the spm-exp prepare root.",
+  "analysis": "gate_v1.json V2 expected_sha256 (R-s0 base, conf_k05-s0, cons_u05-s0, exposure test-s0). Paths relative to the analysis output root (gate files under gate/).",
+  "world_hash": "World.hash() computed with the original r2w implementation (rule_type-seed).",
+  "routing_bm25": "CPU routing dry run recorded in the original routing experiment notes (sysprobe-v1) (3 seeds pooled, percent): top1 / fallback / injected."
+ },
+ "ccgen": {
+  "recipe/data/ccgen_t12a3s1_lite/manifest.json": "3d43580d329419780125b7b1caa48add636f2125188d2f6c6ac2fcb5844906c9",
+  "recipe/data/ccgen_t12a3s1_lite/test-s0.jsonl": "c50c7261d1141d9b11c6701eb2b372fd230eefec11397101f11ab3a68e21f71d",
+  "recipe/data/ccgen_t12a3s1_lite/cons-s0.jsonl": "ceb6d72f4f6c2c85379ef754d1c8d3078e33370e616ae810608ebd2cd631e3ee",
+  "closeout/confirm/views/closed/data/ccgen_t12a3s1_lite/test-s0.jsonl": "696695a5a28dae33f4a8746f5eab3dbf3922066313bc8f84f0eccf53cad2e68e",
+  "closeout/confirm/views/raw/data/ccgen_t12a3s1_lite/test-s0.jsonl": "f10973f8186b9a8ba8271d7ec8dc1987736ab24328c41f80b8908650ba4ea556",
+  "closeout/confirm/views/full/data/ccgen_t12a3s1_lite/test-s0.jsonl": "ca6e1fe381bb24a3116c76f5b4a2cf9a824b5a28d41a1f73591e93ee226d780b",
+  "closeout/confirm/views/matched/data/ccgen_t12a3s1_lite/test-s0.jsonl": "80ea99418568b52814821e6dc40eae17e43f18305726f378d2857c6217759452",
+  "closeout/repair/data/repair-s0.jsonl": "7640795a32555274a89d120e42aee8e81d99e54c03482060690c191784bcd05e",
+  "closeout/repair/data/consistent-s0.jsonl": "a31646d2bcc716f83161a0a5cbdef906fe9aacf222021086c6bb79f2b36fdc0b",
+  "closeout/confirm/views/full_fs3/data/ccgen_t12a3s1_lite/test-s0.jsonl": "b133c36ec874eed20c25f4d77e9c6879ebebc85408355daff666d8b554702ea9",
+  "closeout/confirm/views/matched_fs3/data/ccgen_t12a3s1_lite/test-s0.jsonl": "015f7508d4c9584185390cb5af8058cba8abdcc57d308b403702892a8e2b2880",
+  "recipe/data/ccgen_t12a3s1_lite/test-s1.jsonl": "9b6f517234bf5ea0cd13e3d62ded08ecf36b85b4125fa4aa9132dc80729a1bd9",
+  "recipe/data/ccgen_t12a3s1_lite/cons-s1.jsonl": "a6229c2e700bce1399f20bd3e1a9ab2d07fc90f445bf2f3a45bba0647a78305f",
+  "closeout/confirm/views/closed/data/ccgen_t12a3s1_lite/test-s1.jsonl": "cb1e08c60929a779845dcd2646467737b74189a9196e00f9f38e38ac04e5305a",
+  "closeout/confirm/views/raw/data/ccgen_t12a3s1_lite/test-s1.jsonl": "d52befa89ad15a6012df4ec7b5022c1e191984fb539478797052604068a5f11a",
+  "closeout/confirm/views/full/data/ccgen_t12a3s1_lite/test-s1.jsonl": "00c46eed352b63f1fca2f74bc3261b670ffcf45b4459a396f1049d449e653a82",
+  "closeout/confirm/views/matched/data/ccgen_t12a3s1_lite/test-s1.jsonl": "1e1ea580fd2824d48d2c1cd087c0c3c13bcd72b2e2a6c1930d693b30af663883",
+  "closeout/repair/data/repair-s1.jsonl": "aea4c51f782fd0c893f854f30964cd96c8fa7772d8a7784dfdebb1634cef6ed5",
+  "closeout/repair/data/consistent-s1.jsonl": "ae63a8867999871ec5b033408bd6f3fb752db584f5b0cfe37188d032f5d704af",
+  "closeout/confirm/views/full_fs3/data/ccgen_t12a3s1_lite/test-s1.jsonl": "ee9c7432f5ccb9052be6c51f5c86f23742de427c91593ab1a85fe27da29bbf0e",
+  "closeout/confirm/views/matched_fs3/data/ccgen_t12a3s1_lite/test-s1.jsonl": "d5f4c769ad671b72319b81b3bfeb6e913ee38e9a8a36af594201dfcf126d7e2f",
+  "recipe/data/ccgen_t12a3s1_lite/test-s2.jsonl": "c9274bc477f3b23e8350e3d001d50bf87f6e9cf901af0f4198560cdc97579237",
+  "recipe/data/ccgen_t12a3s1_lite/cons-s2.jsonl": "4e2c3136405acb629b2f59cc715523b40d196851a30539601bcdd19ce3002b4f",
+  "closeout/confirm/views/closed/data/ccgen_t12a3s1_lite/test-s2.jsonl": "0d0da2cd6ebf4b4e21b5ecd5523c7aea6c982cd99db2e286893c8f3f8f20d264",
+  "closeout/confirm/views/raw/data/ccgen_t12a3s1_lite/test-s2.jsonl": "39f2333170de37025b971c85cbed4799cb84524238e3163733fc68f10da0714d",
+  "closeout/confirm/views/full/data/ccgen_t12a3s1_lite/test-s2.jsonl": "490ec7a1128adecc567b7a27dec1ef123b98fb728961b8ef03ab33d95e0233f7",
+  "closeout/confirm/views/matched/data/ccgen_t12a3s1_lite/test-s2.jsonl": "d367523b468f0bf0f86a4eba9d4841ae4f3c8554d007496038d6eaae64374ff6",
+  "closeout/repair/data/repair-s2.jsonl": "9750e98d63856104572a40c1c328c62991130b6cec055514e68e7b2586ba6047",
+  "closeout/repair/data/consistent-s2.jsonl": "cfc2d87f235e514fdca67bc1754c0765b4e6eb7dfc09ad5b04fed0f7bc540f14",
+  "closeout/confirm/views/full_fs3/data/ccgen_t12a3s1_lite/test-s2.jsonl": "7a7f227df45fe903d4a1df5c9173a3d1f82e77292e91ca61655ac83f1c498d29",
+  "closeout/confirm/views/matched_fs3/data/ccgen_t12a3s1_lite/test-s2.jsonl": "798a449ebf3d0709d2452b2cbb0eea3f0ed4b24ada3bf4676638720c6b01437b",
+  "closeout/dev/views/closed/data/ccgen_t12a3s1_lite/test-s0.jsonl": "15df0548198b05af943b27f62ba920b5f74f0276a95674dc2e350d83b8831ec5",
+  "closeout/dev/views/full/data/ccgen_t12a3s1_lite/test-s0.jsonl": "f4b818a20dea40659d1f0ef3c4b0438f58423dbc2847b28ff3c799ec1b963601"
+ },
+ "analysis": {
+  "gate/data/R-s0.jsonl": "e9942c09e4cd54379cb41263bc19ce385cb7020f929c3d7981c874ce6b72c87e",
+  "gate/data/conf_k05-s0.jsonl": "55dcdc3e98b05a0334f9f929626228c6a75b9dee73cec1d4b877f227cd32c7b2",
+  "gate/data/cons_u05-s0.jsonl": "1ce2809df42aae4071f99f952b02eaa17ea15ba572270e2047baa8cd8b9fd0f1",
+  "data/test-s0.jsonl": "5c4450bfa18cabe8c4fd359f16a3f7662fb0c2ccea72b08f8b99be9e2b833062"
+ },
+ "world_hash": {
+  "ccgen_t12a3s1-s0": "dbb578eb6043",
+  "ccgen_t12a3s1-s1": "ec3f33458097",
+  "ccgen_t12a3s1-s2": "a427fbcb66b5",
+  "ccgen_t12a3s1-s3": "e73c4c559129",
+  "ccgen_t12a3s1-s4": "9feb3389bd5c",
+  "ccgen_t12a3s2-s0": "412899412cc5",
+  "ccgen_t12a3s2-s1": "08820469c54b",
+  "ccgen_t12a3s2-s2": "11b950d97e0c",
+  "ccgen_t12a3s2-s3": "edc0854f8c10",
+  "ccgen_t12a3s2-s4": "d7a89c18ce54",
+  "ccgen_t5a5s1-s0": "0186da097bc7",
+  "ccgen_t5a5s1-s1": "5be2aaa71385",
+  "ccgen_t5a5s1-s2": "d3e8cb2fdd60",
+  "ccgen_t5a5s1-s3": "aec18a836dc6",
+  "ccgen_t5a5s1-s4": "863fe23ebdd0",
+  "ccgen_t12a3s1_lite-s0": "4ff39183372c",
+  "ccgen_t12a3s1_lite-s1": "4e13a17da9ee",
+  "ccgen_t12a3s1_lite-s2": "c3af5b409d87",
+  "ccgen_t12a3s1_lite-s3": "38bf80c37162",
+  "ccgen_t12a3s1_lite-s4": "12a9a83c0c2b",
+  "ccgen_t12a3s2_lite-s0": "3c3821ee3b8f",
+  "ccgen_t12a3s2_lite-s1": "73cf2dec245c",
+  "ccgen_t12a3s2_lite-s2": "601af0950987",
+  "ccgen_t12a3s2_lite-s3": "b5ae2886f886",
+  "ccgen_t12a3s2_lite-s4": "24441a3cf4b3",
+  "ccgen_t5a5s1_lite-s0": "8b4d0c6bbcb5",
+  "ccgen_t5a5s1_lite-s1": "29bd7400c8a4",
+  "ccgen_t5a5s1_lite-s2": "19dda2dee7b7",
+  "ccgen_t5a5s1_lite-s3": "f3883adf5a5f",
+  "ccgen_t5a5s1_lite-s4": "956694feeead",
+  "mixed-s0": "aafafc9096d2",
+  "mixed-s1": "15bba24906cd",
+  "mixed-s2": "17c797269ad5",
+  "mixed-s3": "578d32939466",
+  "mixed-s4": "7b4d551a6d03"
+ },
+ "routing_bm25": {
+  "tau_bm25_explicit_2dp": 1.06,
+  "bm25-explicit-k1": {
+   "changed": [
+    85.7,
+    24.0,
+    70.1
+   ],
+   "stable": [
+    85.7,
+    26.6,
+    0.0
+   ],
+   "unrelated": [
+    83.5,
+    27.5,
+    0.4
+   ]
+  },
+  "bm25-para-k1": {
+   "changed": [
+    9.5,
+    100.0,
+    0.0
+   ],
+   "stable": [
+    8.3,
+    100.0,
+    0.0
+   ],
+   "unrelated": [
+    8.0,
+    100.0,
+    0.0
+   ]
+  }
+ }
+}

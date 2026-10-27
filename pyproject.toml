@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scoped-policy-memory"
+version = "0.1.0"
+description = "Scoped Policy Memory: stable agent policies in LoRA weights, versioned edits as dependency-closed context."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = []  # data generation, routing, scoring and the mock backend use only the standard library
+
+[project.optional-dependencies]
+gpu = ["torch", "transformers==5.17.0", "peft", "vllm==0.31.0"]
+eval = ["numpy", "nltk", "langdetect", "absl-py", "immutabledict"]
+routing = ["rank-bm25"]
+test = ["pytest>=7"]
+
+[project.scripts]
+spm = "spm.runtime.cli:main"
+spm-exp = "spm.experiments:main"
+
+[tool.setuptools.packages.find]
+include = ["spm*", "analysis*"]
+
+[tool.setuptools.package-data]
+spm = ["assets/words.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"

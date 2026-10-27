@@ -1,0 +1,14 @@
+{
+  "name": "real scope routing instead of task-ID parsing",
+  "index": "the 12 task sections of the item's current policy version; changed sections from version metadata",
+  "routers": {"bm25": "BM25 Okapi defaults over lowercase \\w+ tokens",
+              "dense": "bge-small-en-v1.5, CLS pooling, L2-normalised, query prefix 'Represent this sentence for searching relevant passages: '"},
+  "queries": {"explicit": "user message (tool line + request)", "para": "task_type_k rewritten into natural phrasings",
+              "mask": "task_type_k replaced by 'the task'"},
+  "decision": {"k1": "fallback to the full policy if top1-top2 margin <= 0 or < tau; inject closure if top1 changed; else nothing",
+               "k3": "no fallback; inject constants + top3 if any changed"},
+  "tau": {"calibration": "closeout dev seed 0 only", "target_non_fallback_top1_precision": 0.99},
+  "configs": ["bm25-explicit-k1", "dense-explicit-k1", "bm25-para-k1", "dense-para-k1", "bm25-para-k3", "dense-para-k3",
+              "bm25-mask-k1", "dense-mask-k1"],
+  "primary": "bm25-explicit-k1"
+}

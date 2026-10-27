@@ -1,0 +1,18 @@
+{
+  "name": "training-recipe comparison (memory vs deference to in-context edits)",
+  "world": "ccgen_t12a3s1_lite (T=12 tasks, A=3 arguments, S=1), seeds 0/1/2",
+  "base_data": "per task 32 exec + 4 decoy + 2 restatements (494 rows), no policy in context",
+  "arms": {
+    "P": "base data only (plain SFT)",
+    "ctrl": "P + 128 ordinary rows (equal amount of data)",
+    "M": "P with the full original policy in context for each exec/decoy row with probability 0.5",
+    "cons": "P + 128 consistent rows: same requests as prec's practice rows, original policy in context, label = memory",
+    "prec": "P + 64 Override practice rows (practised tasks 1-6; 3/4 ask the changed task, 1/4 another task) + 64 Substitute rows (foreign policies of seeds 50/51)"
+  },
+  "probe_set": {"n_per_probe": 300, "probes": ["none", "orig", "override_official", "override_held", "substitute"],
+                "override_held": "held-out tasks 7-12 edited (vseed 2000+), answer-changing items only",
+                "substitute": "policy of seed 100+s, answer-changing items only"},
+  "comparison": "prec - cons and prec - P on override_held and substitute; seed-stratified item bootstrap 95% CI (10000)",
+  "decision_rule_pp": {"method": 10, "analysis": 3, "rule": "both columns >= 10pp with CI lower bound > 0 -> conflict samples are a method component; both <= 3pp -> analysis only; otherwise add a seed"},
+  "capability_guard": "IFEval (541 prompts) delta vs base; reported per seed, not a non-inferiority proof"
+}

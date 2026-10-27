@@ -1,0 +1,10 @@
+{
+  "name": "synthetic-world mechanism analyses (appendix)",
+  "world": "mixed, K=16 (2 always-on + 16 mapping + 16 range rules)",
+  "exposure": {"seeds": [0, 1, 2], "base_rows": 480,
+               "arms": {"W": "no family lists in context", "C": "both lists", "X": "range list only", "M": "each list with p=0.5", "R": "mapping list only"},
+               "test": ["own_none", "own_full", "own_conflict", "new_full (world seed 3)"],
+               "metric": "format-independent source selection: memory_src, conf_new / conf_old / conf_none / conf_other_mem / conf_other"},
+  "gate_v2": {"seed": 0, "practice_rows": 24, "arms": {"conf_k05": "R + 24 conflicting update rows", "cons_u05": "R + the same 24 requests, consistent full range list, memory label"},
+              "thresholds": {"follow_min": 0.90, "memory_min": 0.95, "cons_follow_ge": 0.90, "follow_gap": 0.15, "memory_gap": 0.10}}
+}

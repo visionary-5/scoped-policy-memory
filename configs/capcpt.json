@@ -1,0 +1,15 @@
+{
+  "name": "CAP-CPT reproduction (arXiv 2510.11588) under identical conditions",
+  "analysis_prompt": "official Utils/Policy_Analysis/Final_Prompting.md of the CAP-CPT release (not redistributed; pass --prompt-file)",
+  "generator": "Qwen3-32B, vLLM, non-thinking; temperature 0.7 / top_p 0.8 / top_k 20 (analysis greedy)",
+  "data_per_seed": {"n_scenario_per_spec": 5000, "n_behavior_per_spec": 1000, "n_paraphrase": 5, "n_question_rewrites": 3,
+                    "specs": "fact 2 + behaviour 12 + workflow 36 (structural ground truth)",
+                    "trajectory": "the SFT rows rendered as their exact training text", "nosim": "without scenario simulations"},
+  "inference_anchor": "Based on the policy document #Pxxxxx you previously learnt about, answer the user query.",
+  "arms": {"sftA": "SFT only on P_anchor", "capcpt": "CPT full -> SFT P_anchor", "capcpt_nosim": "CPT nosim -> SFT P_anchor",
+           "capcpt_conf": "CPT full -> SFT prec_anchor (P_anchor + prec's 128 conflict rows verbatim)"},
+  "eval": {"frozen": "probe set (none / orig / override_official / override_held / substitute)", "pid": "none items with the anchor sentence"},
+  "predictions": {"threshold_pp": 10, "memory_tolerance_pp": 5,
+                  "H1": "prec - best(capcpt, capcpt_nosim) >= 10pp on override_held and substitute, CI lower bound > 0, >= 2/3 seeds positive",
+                  "H2": "capcpt_conf - capcpt >= 10pp on both, same CI/seed rule, and capcpt_conf none >= capcpt none - 5pp"}
+}

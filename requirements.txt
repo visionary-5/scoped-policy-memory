@@ -1,0 +1,22 @@
+# Core (data generation, routing, scoring, CLI with the mock backend): Python >= 3.10, standard library only.
+# Tests:
+pytest>=7
+
+# GPU training and inference (versions used for the paper runs; Qwen3.5-4B, A100 80GB):
+torch
+transformers==5.17.0
+peft
+vllm==0.31.0
+# Qwen3.5 DeltaNet layers fall back to a slow PyTorch path without these optional kernels:
+# flash-linear-attention
+# causal-conv1d
+
+# Evaluation extras: paired bootstrap (numpy) and the vendored official IFEval (third_party/ifeval)
+numpy
+nltk
+langdetect
+absl-py
+immutabledict
+
+# Optional: BM25 router uses rank_bm25 when installed, otherwise an equivalent built-in implementation
+rank-bm25

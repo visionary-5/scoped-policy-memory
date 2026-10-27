@@ -1,0 +1,14 @@
+{
+  "model": "Qwen3.5-4B (set SPM_MODEL_DIR); second backbone in the paper: Olmo-3-7B-Instruct",
+  "lora": {"rank": 16, "alpha": 32, "dropout": 0.0, "targets": "all nn.Linear in the language-model layers"},
+  "optimizer": {"name": "AdamW", "weight_decay": 0.0, "warmup": "linear over total_steps // 20", "decay": "linear to 0", "grad_clip": 1.0},
+  "write": {"steps": 800, "lr": 0.0002, "batch": 16, "micro_batch": 4, "init": "base model",
+            "arms": ["P", "M", "ctrl", "cons", "prec"], "data": "recipe/data/<rt>/<arm>-s<seed>.jsonl"},
+  "repair": {"steps": 120, "lr": 0.0001, "batch": 16, "micro_batch": 4, "init": "prec adapter of the same seed",
+             "arms": ["repair", "consistent"], "data": "closeout/repair/data/<arm>-s<seed>.jsonl"},
+  "capcpt": {"cpt": {"epochs": 1, "batch": 32, "micro_batch": 16, "max_len": 2048, "lr": 0.0002, "loss": "all tokens"},
+             "sft": {"steps": 800, "batch": 16, "micro_batch": 4, "lr": 0.0002, "loss": "answer tokens", "init": "CPT adapter (sftA: base)"}},
+  "analysis": {"steps": 800, "lr": 0.0002, "batch": 16, "micro_batch": 4, "rule_type": "mixed", "K": 16},
+  "decoding": {"temperature": 0, "max_new_tokens": {"ccgen": 96, "mixed": 64}, "enable_thinking": false,
+               "truncation": "an output reaching max_new_tokens counts as wrong"}
+}
